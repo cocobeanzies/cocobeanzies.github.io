@@ -90,13 +90,13 @@ function hideToReuse() {
 }
 
 function peepysTheme() {
-	playStampVideo('https://cocobeanzies.mizabot.xyz/stamps/peepys_theme.avif', 'peepys-theme');
+	playStampVideo('https://cocobeanzies.github.io/stamps/peepys_theme.avif', 'peepys-theme');
 }
 function rickRoll() {
-	playStampVideo('https://cocobeanzies.mizabot.xyz/stamps/rickroll.avif', 'rickroll');
+	playStampVideo('https://cocobeanzies.github.io/stamps/rickroll.avif', 'rickroll');
 }
 function badApple() {
-	playStampVideo('https://cocobeanzies.mizabot.xyz/stamps/bad_apple.avif', 'bad-apple');
+	playStampVideo('https://cocobeanzies.github.io/stamps/bad_apple.avif', 'bad-apple');
 }
 
 const stampSoft = 192;
@@ -122,7 +122,7 @@ function spawnStamp(parent, mode, rowIndex) {
 		lazy = false;
 	} else if (mode == 'left') {
 		generateURL = () => {
-			let url = "https://cocobeanzies.mizabot.xyz/jwst/" + jwstList.pop();
+			let url = "https://cocobeanzies.github.io/jwst/" + jwstList.pop();
 			if (!jwstList.length) jwstList = shuffle(Array.from(JWST));
 			return [url, false];
 		}
@@ -131,7 +131,7 @@ function spawnStamp(parent, mode, rowIndex) {
 		shape = 'star';
 	} else {
 		generateURL = () => {
-			let url = "https://cocobeanzies.mizabot.xyz/stamps/" + stampList.pop();
+			let url = "https://cocobeanzies.github.io/stamps/" + stampList.pop();
 			if (!stampList.length) stampList = shuffle(Array.from(STAMPS));
 			//
 			isAnim = url.endsWith('.gif') || url.endsWith('.webp');
@@ -1469,11 +1469,11 @@ function setupGallery() {
 		if (style.shuffle) shuffle(style.images);
 		style.images.forEach((fn, i) => {
 			const fn2 = style.path + "/" + fn;
-			const sources = ["https://cocobeanzies.mizabot.xyz/styles/" + fn2];
+			const sources = ["https://cocobeanzies.github.io/styles/" + fn2];
 			const cloudCount = (Math.random() + 1) * window.innerWidth / imageSep / 8;
 			for (let j = 0; j < cloudCount; j++) {
 				const k = randint(0, CLOUDS.length - 1);
-				sources.push("https://cocobeanzies.mizabot.xyz/clouds/" + CLOUDS[k]);
+				sources.push("https://cocobeanzies.github.io/clouds/" + CLOUDS[k]);
 			}
 			sources.forEach((url, j) => {
 				const url2 = replaceIOS(url);
@@ -1497,7 +1497,7 @@ function setupGallery() {
 						image.src = url2;
 						image.alt = url2.split("/styles/", 2)[1].split("/", 2)[1].split(".", 2)[0] + " by Cocobeanzies";
 					}
-					full_url = "https://cocobeanzies.mizabot.xyz/styles-full/" + fn2;
+					full_url = "https://cocobeanzies.github.io/styles-full/" + fn2;
 				}
 				image.isCloud = j;
 				image.setAttribute('loading', 'lazy');
@@ -1812,7 +1812,7 @@ function setupBanner2() {
 	for (const src of roselandSources) {
 		const banner = document.createElement('img');
 		banner.className = 'non-selectable';
-		banner.src = replaceIOS("https://cocobeanzies.mizabot.xyz/pictures/" + src);
+		banner.src = replaceIOS("https://cocobeanzies.github.io/pictures/" + src);
 		banner.alt = "Cocobeanzies Banner";
 		banner.style.display = 'none';
 		banner.style.position = 'fixed';
@@ -1835,7 +1835,7 @@ function setupBanner2() {
 	{
 		const grad = document.createElement('img');
 		grad.className = 'non-selectable';
-		grad.src = replaceIOS("https://cocobeanzies.mizabot.xyz/pictures/Roseland_Gradient.avif");
+		grad.src = replaceIOS("https://cocobeanzies.github.io/pictures/Roseland_Gradient.avif");
 		grad.style.display = 'none';
 		grad.style.position = 'fixed';
 		grad.style.left = '0px';
@@ -1872,7 +1872,7 @@ function setupBanner2() {
 	for (let i = 0; i < 8; i++) {
 		const clouds = document.createElement('img');
 		clouds.className = 'non-selectable';
-		clouds.src = i >= 2 ? "https://cocobeanzies.mizabot.xyz/pictures/Roseland_Clouds2.webp" : "https://cocobeanzies.mizabot.xyz/pictures/Roseland_Clouds.webp";
+		clouds.src = i >= 2 ? "https://cocobeanzies.github.io/pictures/Roseland_Clouds2.webp" : "https://cocobeanzies.github.io/pictures/Roseland_Clouds.webp";
 		clouds.style.display = 'block';
 		clouds.style.position = 'fixed';
 		clouds.style.left = '0px';
@@ -1912,7 +1912,7 @@ function setupBanner2() {
 	{
 		const critterGlow = document.createElement('img');
 		critterGlow.className = 'non-selectable';
-		critterGlow.src = "https://cocobeanzies.mizabot.xyz/pictures/Roseland_Glow.png";
+		critterGlow.src = "https://cocobeanzies.github.io/pictures/Roseland_Glow.png";
 		critterGlow.style.display = 'none';
 		critterGlow.style.position = 'fixed';
 		critterGlow.style.left = '0px';
@@ -1941,7 +1941,7 @@ function setupBanner2() {
 		bannerContainer.appendChild(bannerGlow);
 		roselandBanners.push(bannerGlow);
 		bannerGlow.addEventListener('mouseover', () => {
-			bannerGlow.style.cursor = "url('https://cocobeanzies.mizabot.xyz/icons/sound.png') 12 12, auto";
+			bannerGlow.style.cursor = "url('https://cocobeanzies.github.io/icons/sound.png') 12 12, auto";
 			critterGlow.style.display = 'block';
 		});
 		bannerGlow.addEventListener('mouseout', () => {
@@ -1953,7 +1953,7 @@ function setupBanner2() {
 		});
 
 		const noseGlow = document.createElement('img');
-		noseGlow.src = "https://cocobeanzies.mizabot.xyz/pictures/Roseland_Glow2.png";
+		noseGlow.src = "https://cocobeanzies.github.io/pictures/Roseland_Glow2.png";
 		noseGlow.style.display = 'none';
 		noseGlow.style.position = 'fixed';
 		noseGlow.style.left = '0px';
@@ -2006,7 +2006,7 @@ function setupBanner2() {
 	bannerContainer.appendChild(leafContainer);
 	for (let i = 0; i < bannerLC; i++) {
 		leaf = document.createElement('img');
-		leaf.src = replaceIOS("https://cocobeanzies.mizabot.xyz/pictures/Roseland_Leaves.avif");
+		leaf.src = replaceIOS("https://cocobeanzies.github.io/pictures/Roseland_Leaves.avif");
 		leaf.style.display = 'block';
 		leaf.style.position = 'absolute';
 		leaf.style.left = '0px';
@@ -2147,7 +2147,7 @@ setupRipples();
 const blackHole = document.createElement('img');
 blackHole.style.position = 'fixed';
 blackHole.style.zIndex = '99';
-blackHole.src = "https://cocobeanzies.mizabot.xyz/pictures/black_hole.webp"
+blackHole.src = "https://cocobeanzies.github.io/pictures/black_hole.webp"
 blackHole.alt = "";
 blackHole.style.display = 'none';
 blackHole.style.height = '128px';
