@@ -229,7 +229,7 @@ with open("index.html", "r+", encoding="utf-8") as f:
 		"lined": sorted(filter((lambda fn: fn.endswith(".webp")), try_listdir("styles/lined"))),
 		"animated": sorted(filter((lambda fn: fn.endswith(".avif")), try_listdir("styles/animated"))),
 	}
-	imagelist = "\n".join(f'<img id="{(k + "/" + v).replace("\"", "$")}" loading="lazy" src="/styles/{k}/{v}" alt="{v.rsplit("/", 1)[-1].rsplit(".", 1)[0].replace("_", " ")} by Cocobeanzies">' for k in image_map for v in image_map[k])
+	imagelist = "\n".join(f'<img id="{(k + "/" + v).replace("\"", "$")}" loading="lazy" src="{"https://cocobeanzies.github.io" if k != "animated" else ""}/styles/{k}/{v}" alt="{v.rsplit("/", 1)[-1].rsplit(".", 1)[0].replace("_", " ")} by Cocobeanzies">' for k in image_map for v in image_map[k])
 	images = f"""<!-- BEGIN DYNAMIC IMAGES -->
 
 {imagelist}
