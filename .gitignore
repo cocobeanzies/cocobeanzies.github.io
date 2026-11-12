@@ -1,3 +1,4 @@
 site
 upload.html
 cache
+__pycache__

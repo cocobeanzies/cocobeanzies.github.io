@@ -1,0 +1,7 @@
+exclude:
+  - .git
+  - binaries
+  - jwst-source
+  - stamps-source
+  - styles-2024
+  - styles-source
