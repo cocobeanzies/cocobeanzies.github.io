@@ -1,4 +1,5 @@
 site
 upload.html
 cache
+auth.json
 __pycache__
