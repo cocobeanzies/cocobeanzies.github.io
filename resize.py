@@ -8,9 +8,10 @@ import subprocess
 import sys
 import numpy as np
 from PIL import Image
-from misc.util import EvalPipe
+import psutil
+from misc.util import EvalPipe, force_kill, get_free_port
 
-PORT = 7776
+PORT = get_free_port()
 interface = EvalPipe.connect(
 	[sys.executable, "-m", "misc.x_compute", str(PORT), "0", "image", "0", "0", "[0]"],
 	PORT,
@@ -292,3 +293,5 @@ with open("sitemap.xml", "w", encoding="utf-8") as f:
 {images}
   </url>
 </urlset>""")
+
+force_kill(psutil.Process())
